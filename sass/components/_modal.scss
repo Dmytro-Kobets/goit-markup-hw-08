@@ -1,0 +1,213 @@
+.modal {
+  position: absolute;
+  width: 528px;
+  min-height: 581px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 500ms;
+  padding: 40px;
+}
+
+.modal-top-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #212121;
+  margin-bottom: 2px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  label {
+    font-size: 12px;
+    line-height: 1.67;
+    letter-spacing: 0.01em;
+    color: #757575;
+    display: block;
+  }
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-logo {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+.modal-input-field {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-top: 4px;
+  padding-left: 42px;
+  transition: border, fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus {
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    outline: none;
+    + {
+      .input-logo {
+        fill: var(--accent-color);
+      }
+    }
+  }
+  + {
+    .input-logo {
+      transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
+
+.modal-comment {
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-top: 4px;
+  resize: none;
+  padding: 12px 16px;
+  display: block;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus {
+    border: 1px solid #2196f3;
+    border-radius: 4px;
+    outline: none;
+  }
+}
+
+.modal-check-wrap {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.modal-check {
+  &:checked + .user-policy-text::before {
+    background-color: var(--accent-color);
+    border: transparent;
+    background-image: url(../images/icon-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &:checked {
+    transition: background-color, border 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.user-policy-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+  margin: 0 auto;
+  &::before {
+    content: "";
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    border-radius: 3px;
+    display: block;
+    margin-right: 7px;
+    transition: border, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.user-policy-text,
+.user-policy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-policy {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  -webkit-text-decoration-skip: none;
+}
+
+.modal-button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  width: 200px;
+  height: 50px;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: transparent;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    background-color: #188ce8;
+  }
+}
+
+.backdrop.is-hidden {
+  .modal {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: opacity 500ms linear, visibility 500ms linear;
+}
+
+.backdrop-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    fill: var(--accent-color);
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

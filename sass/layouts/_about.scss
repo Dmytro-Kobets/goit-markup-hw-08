@@ -1,0 +1,35 @@
+.about {
+    padding-top: 94px;
+    padding-bottom: 94px;
+    &__list {
+      display: flex;
+      justify-content: center;
+      column-gap: 30px;
+    }
+    &__item {
+      max-width: 270px;
+    }
+    &__icon-container {
+      width: 270px;
+      height: 120px;
+      background-color: #f5f4fa;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__title {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.17;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding-top: 30px;
+      padding-bottom: 10px;
+    }
+    &__text {
+      line-height: 1.71;
+      letter-spacing: 0.03em;
+      color: #757575;
+    }
+  }
