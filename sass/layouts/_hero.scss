@@ -8,22 +8,30 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 118px;
+  padding-bottom: 118px;
   max-width: 1600px;
   margin: 0 auto;
   display: flex;
   text-align: center;
   flex-direction: column;
+  @include desktop {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
   &__title {
     font-weight: 900;
-    font-size: 44px;
+    font-size: 26px;
     line-height: 1.36;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #ffffff;
-    max-width: 700px;
+    max-width: 360px;
     margin: 0 auto;
+    @include desktop {
+      font-size: 44px;
+      max-width: 696px;
+    }
   }
   &__btn {
     font-family: "Roboto", sans-serif;
@@ -36,12 +44,15 @@
     cursor: pointer;
     margin: 0 auto;
     margin-top: 30px;
-    min-width: 216px;
+    min-width: 200px;
     min-height: 50px;
     background: #2196f3;
     padding-left: 0 auto;
     padding-right: 0 auto;
     border: transparent;
     border-radius: 4px;
+    @include desktop {
+      min-width: 216px;
+    }
   }
 }

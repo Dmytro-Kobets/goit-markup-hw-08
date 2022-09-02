@@ -1,24 +1,35 @@
 .clients {
-  padding-top: 94px;
-  padding-bottom: 94px;
 }
 
 .clients-title {
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1.17;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   letter-spacing: 0.03em;
   text-align: center;
+  @include desktop {
+    margin-bottom: 50px;
+  }
 }
 .clients-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  @include desktop {
+    flex-wrap: nowrap;
+  }
 }
 
 .clients-item {
-  width: 170px;
+  width: calc((100% - 30px) / 2);
   height: 92px;
+  @include tablet {
+    width: calc((100% - 60px) / 3)
+  }
+  @include desktop {
+    width: calc((100% - 150px) / 6)
+  }
 }
 
 .clients-link {
