@@ -2,27 +2,28 @@
   background-color: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
-  // a[href^="https"] {
-  //   color: #ffffff;
-  // }
+  @include desktop {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
   a:hover,
   a:focus {
     color: var(--accent-color);
   }
+
   &__box {
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
     justify-content: center;
     text-align: center;
-    @include tablet{
+    gap: 60px;
+    @include tablet {
       column-gap: 165px;
     }
     @include desktop {
-      flex-wrap: nowrap;
-      gap: 70px;
-      align-items: baseline;
       text-align: left;
+      align-items: baseline;
+      column-gap: 92px;
     }
   }
 }
@@ -41,7 +42,6 @@
   &__item {
     a {
       color: rgba(255, 255, 255, 0.6);
-      
     }
     &:first-child {
       a {
@@ -58,13 +58,13 @@
   &__title {
     font-weight: 700;
     font-size: 14px;
-    line-height: 2;
+    line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 20px;
-    @include desktop {
-      line-height: 1.14;
+    @include tablet {
+      line-height: 2;
     }
   }
   &__list {
@@ -93,9 +93,8 @@
 
 .footer-subscribe {
   width: 100%;
-  @include desktop {
-    width: 700px;
-    margin-left: 23px;
+  @include tablet {
+    width: max-content;
   }
   &__title {
     font-weight: 700;
@@ -105,14 +104,6 @@
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 20px;
-  }
-  &__form {
-    @include desktop {
-      display: flex;
-      align-items: start;
-      gap: 12px;
-    }
-    
   }
   &__input {
     width: 100%;
@@ -128,6 +119,7 @@
     letter-spacing: 0.03em;
     caret-color: #ffffff;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 20px;
     &:not(:placeholder-shown) {
       color: #ffffff;
     }
@@ -135,16 +127,13 @@
       border: 1px solid #ffffff;
       outline: none;
     }
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     @include mobile {
       width: 450px;
     }
     @include desktop {
       width: 358px;
-      // display: inline-block;
+      display: inline-block;
+      margin-bottom: 0;
     }
   }
   &__button {
@@ -157,16 +146,18 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     letter-spacing: 0.06em;
     color: #ffffff;
-    gap: 10px;
-    margin: 0 auto;
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
     @include desktop {
-      
+      margin-top: 0;
+      margin-left: 10px;
+      display: inline-block;
     }
+  }
+  &__icon {
+    vertical-align: middle;
   }
 }

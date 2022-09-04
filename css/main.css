@@ -685,23 +685,19 @@ main {
   outline: none;
 }
 
-.portfolio {
-  padding-top: 100px;
-  padding-bottom: 94px;
-}
-.portfolio .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.portfolio-btn-list {
+.portfolio-btn {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   -moz-column-gap: 8px;
        column-gap: 8px;
+  row-gap: 15px;
 }
-
+@media screen and (min-width: 768px) {
+  .portfolio-btn {
+    justify-content: center;
+  }
+}
 .portfolio-btn button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -710,11 +706,6 @@ main {
   text-align: center;
   letter-spacing: 0.03em;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  -moz-column-gap: 8px;
-       column-gap: 8px;
   background: #f5f4fa;
   border-radius: 4px;
   border: transparent;
@@ -727,6 +718,7 @@ main {
 .portfolio-btn :focus {
   background-color: var(--accent-color);
   color: #ffffff;
+  border-radius: 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -737,30 +729,44 @@ main {
   -moz-column-gap: 30px;
        column-gap: 30px;
   row-gap: 30px;
+  justify-content: center;
 }
-
-.portfolio-gallery-item {
+@media screen and (min-width: 768px) {
+  .portfolio-gallery {
+    justify-content: flex-start;
+  }
+}
+.portfolio-gallery__item {
   background: #ffffff;
-  width: 370px;
+  border: 1px solid #eeeeee;
+  width: 100%;
   cursor: pointer;
   transition: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: box-shadow;
   transition-duration: 250ms;
   position: relative;
 }
-.portfolio-gallery-item:hover, .portfolio-gallery-item:focus {
+.portfolio-gallery__item:hover, .portfolio-gallery__item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.portfolio-gallery-item:hover .portfolio-gallery-top-text, .portfolio-gallery-item:focus .portfolio-gallery-top-text {
+.portfolio-gallery__item:hover .portfolio-gallery__top-text, .portfolio-gallery__item:focus .portfolio-gallery__top-text {
   transform: translateY(0%);
 }
-
-.portfolio-gallery-top-wrap {
+@media screen and (min-width: 768px) {
+  .portfolio-gallery__item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-gallery__item {
+    width: calc((100% - 60px) / 3);
+  }
+}
+.portfolio-gallery__top-wrap {
   position: relative;
   overflow: hidden;
 }
-
-.portfolio-gallery-top-text {
+.portfolio-gallery__top-text {
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
@@ -777,27 +783,17 @@ main {
   transition-duration: 250ms;
   overflow: auto;
 }
-
-.portfolio-gallery-desc {
-  border: 1px solid #eeeeee;
-  border-top: 0;
+.portfolio-gallery__desc {
+  padding: 20px 24px;
 }
-
-.portfolio-gallery-desc {
-  padding-left: 24px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.portfolio-gallery-title {
+.portfolio-gallery__title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   margin-bottom: 4px;
 }
-
-.portfolio-gallery-category {
+.portfolio-gallery__category {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
@@ -809,6 +805,12 @@ main {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+@media screen and (min-width: 1200px) {
+  .footer {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
 .footer a:hover,
 .footer a:focus {
   color: var(--accent-color);
@@ -816,9 +818,9 @@ main {
 .footer__box {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px;
   justify-content: center;
   text-align: center;
+  gap: 60px;
 }
 @media screen and (min-width: 768px) {
   .footer__box {
@@ -828,10 +830,10 @@ main {
 }
 @media screen and (min-width: 1200px) {
   .footer__box {
-    flex-wrap: nowrap;
-    gap: 70px;
-    align-items: baseline;
     text-align: left;
+    align-items: baseline;
+    -moz-column-gap: 92px;
+         column-gap: 92px;
   }
 }
 
@@ -858,15 +860,15 @@ main {
 .footer-soc__title {
   font-weight: 700;
   font-size: 14px;
-  line-height: 2;
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 20px;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .footer-soc__title {
-    line-height: 1.14;
+    line-height: 2;
   }
 }
 .footer-soc__list {
@@ -894,10 +896,11 @@ main {
 .footer-subscribe {
   width: 100%;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .footer-subscribe {
-    width: 700px;
-    margin-left: 23px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
 }
 .footer-subscribe__title {
@@ -908,13 +911,6 @@ main {
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 20px;
-}
-@media screen and (min-width: 1200px) {
-  .footer-subscribe__form {
-    display: flex;
-    align-items: start;
-    gap: 12px;
-  }
 }
 .footer-subscribe__input {
   width: 100%;
@@ -931,9 +927,6 @@ main {
   caret-color: #ffffff;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 .footer-subscribe__input:not(:-moz-placeholder-shown) {
   color: #ffffff;
@@ -956,6 +949,8 @@ main {
 @media screen and (min-width: 1200px) {
   .footer-subscribe__input {
     width: 358px;
+    display: inline-block;
+    margin-bottom: 0;
   }
 }
 .footer-subscribe__button {
@@ -968,15 +963,23 @@ main {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   letter-spacing: 0.06em;
   color: #ffffff;
-  gap: 10px;
-  margin: 0 auto;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
+@media screen and (min-width: 1200px) {
+  .footer-subscribe__button {
+    margin-top: 0;
+    margin-left: 10px;
+    display: inline-block;
+  }
+}
+.footer-subscribe__icon {
+  vertical-align: middle;
+}
+
 /* ----HEADER----- */
 /* -----HERO----- */
 /* -----ABOUT----- */
