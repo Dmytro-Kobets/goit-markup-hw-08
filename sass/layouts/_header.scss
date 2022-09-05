@@ -96,7 +96,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 10px 5px 48px 15px;
+  padding: 10px 15px 48px 40px;
   @include mobile {
     padding: 10px 15px 48px 40px;
   }
@@ -171,7 +171,7 @@
   display: flex;
   &__item {
     font-weight: 500;
-    font-style: 14px;
+    font-size: 14px;
     line-height: 1.22;
     letter-spacing: 0.02em;
     @include mobile {
@@ -187,8 +187,8 @@
         width: 0;
         height: 22px;
         border: 1px solid rgba(33, 33, 33, 0.2);
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 3px;
+        margin-right: 3px;
         @include mobile {
           margin-left: 10px;
           margin-right: 10px;
