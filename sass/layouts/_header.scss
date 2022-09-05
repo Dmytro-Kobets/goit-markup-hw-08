@@ -22,6 +22,7 @@
   &__container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   &__menu {
     margin-left: auto;
@@ -43,7 +44,7 @@
   letter-spacing: 0.03em;
   color: var(--primary-color);
   @include tablet {
-    margin-right: 88px;
+    
   }
   @include desktop {
     font-size: 26px;
@@ -94,7 +95,6 @@
   @include tablet {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
     gap: 10px;
   }
   @include desktop {

@@ -23,7 +23,8 @@
     @include desktop {
       text-align: left;
       align-items: baseline;
-      column-gap: 92px;
+      gap: 0;
+      justify-content: space-between;
     }
   }
 }
