@@ -61,7 +61,17 @@ body {
 }
 
 main {
-  padding-top: 80px;
+  padding-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  main {
+    padding-top: 79px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main {
+    padding-top: 80px;
+  }
 }
 
 .section {
@@ -311,6 +321,18 @@ main {
   width: 100%;
   z-index: 1;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+}
 .header :hover,
 .header :focus {
   color: var(--accent-color);
@@ -324,6 +346,8 @@ main {
   margin-left: auto;
   border: transparent;
   background-color: transparent;
+  width: 40px;
+  height: 40px;
 }
 @media screen and (min-width: 768px) {
   .header__menu {
@@ -334,10 +358,20 @@ main {
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 24px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--primary-color);
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    margin-right: 88px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+  }
 }
 .logo__part {
   color: var(--accent-color);
@@ -345,6 +379,11 @@ main {
 
 .navigation {
   display: none;
+}
+@media screen and (min-width: 768px) {
+  .navigation {
+    display: block;
+  }
 }
 .navigation__list {
   display: flex;
@@ -380,12 +419,33 @@ main {
 .navigation-contacts {
   display: none;
 }
+@media screen and (min-width: 768px) {
+  .navigation-contacts {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navigation-contacts {
+    flex-direction: row;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    align-items: center;
+  }
+}
 .navigation-contacts a {
   font-weight: 500;
-  line-height: 1.33;
+  line-height: 1.16;
   letter-spacing: 0.02em;
   color: #757575;
   fill: #757575;
+}
+@media screen and (min-width: 1200px) {
+  .navigation-contacts a {
+    line-height: 1.33;
+  }
 }
 .navigation-contacts__item a {
   display: flex;
@@ -416,7 +476,8 @@ main {
   padding: 0 0;
   fill: var(--primary-color);
 }
-.mobile-menu__close :hover, .mobile-menu__close :focus {
+.mobile-menu__close :hover,
+.mobile-menu__close :focus {
   fill: var(--accent-color);
 }
 .mobile-menu > .menu-container {
@@ -467,7 +528,8 @@ main {
   letter-spacing: 0.02em;
   color: #757575;
 }
-.menu-contacts__item:not(:first-child) :hover, .menu-contacts__item:not(:first-child) :focus {
+.menu-contacts__item:not(:first-child) :hover,
+.menu-contacts__item:not(:first-child) :focus {
   color: var(--accent-color);
 }
 

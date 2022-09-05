@@ -6,6 +6,14 @@
   position: fixed;
   width: 100%;
   z-index: 1;
+  @include tablet {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  @include desktop {
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
   :hover,
   :focus {
     color: var(--accent-color);
@@ -19,6 +27,8 @@
     margin-left: auto;
     border: transparent;
     background-color: transparent;
+    width: 40px;
+    height: 40px;
     @include tablet {
       display: none;
     }
@@ -28,10 +38,16 @@
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 24px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--primary-color);
+  @include tablet {
+    margin-right: 88px;
+  }
+  @include desktop {
+    font-size: 26px;
+  }
   &__part {
     color: var(--accent-color);
   }
@@ -39,6 +55,9 @@
 
 .navigation {
   display: none;
+  @include tablet {
+    display: block;
+  }
   &__list {
     display: flex;
     column-gap: 50px;
@@ -72,15 +91,26 @@
 
 .navigation-contacts {
   display: none;
-  // display: flex;
-  // margin-left: auto;
-  // column-gap: 30px;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    gap: 10px;
+  }
+  @include desktop {
+    flex-direction: row;
+    column-gap: 30px;
+    align-items: center;
+  }
   a {
     font-weight: 500;
-    line-height: 1.33;
+    line-height: 1.16;
     letter-spacing: 0.02em;
     color: #757575;
     fill: #757575;
+    @include desktop {
+      line-height: 1.33;
+    }
   }
   &__item {
     a {
@@ -110,11 +140,12 @@
     margin-left: auto;
     padding: 0 0;
     fill: var(--primary-color);
-    :hover, :focus {
+    :hover,
+    :focus {
       fill: var(--accent-color);
     }
   }
-  >.menu-container {
+  > .menu-container {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -166,7 +197,8 @@
         color: #757575;
       }
       margin-top: 32px;
-      :hover, :focus {
+      :hover,
+      :focus {
         color: var(--accent-color);
       }
     }

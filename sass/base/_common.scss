@@ -14,7 +14,13 @@ body {
 }
 
 main {
-  padding-top: 80px;
+  padding-top: 60px;
+  @include tablet {
+    padding-top: 79px;
+  }
+  @include desktop {
+    padding-top: 80px;
+  }
 }
 
 .section {
