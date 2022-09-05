@@ -409,6 +409,10 @@ main {
   display: block;
   margin-left: auto;
   padding: 0 0;
+  fill: var(--primary-color);
+}
+.mobile-menu__close :hover, .mobile-menu__close :focus {
+  fill: var(--accent-color);
 }
 .mobile-menu > .menu-container {
   height: 100%;
