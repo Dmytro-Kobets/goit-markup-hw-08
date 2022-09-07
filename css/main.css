@@ -66,7 +66,7 @@ main {
 }
 @media screen and (min-width: 768px) {
   main {
-    padding-top: 79px;
+    padding-top: 77px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -437,7 +437,12 @@ main {
   border-radius: 2px;
   background-color: var(--accent-color);
   position: absolute;
-  bottom: -1px;
+  bottom: 1px;
+}
+@media screen and (min-width: 1200px) {
+  .navigation__list .current::after {
+    bottom: -1px;
+  }
 }
 
 .navigation-contacts {
@@ -460,6 +465,7 @@ main {
   }
 }
 .navigation-contacts a {
+  font-size: 12px;
   font-weight: 500;
   line-height: 1.16;
   letter-spacing: 0.02em;
@@ -469,12 +475,16 @@ main {
 @media screen and (min-width: 1200px) {
   .navigation-contacts a {
     line-height: 1.33;
+    font-size: 14px;
   }
+}
+.navigation-contacts__list {
+  vertical-align: middle;
 }
 .navigation-contacts__item a {
   display: flex;
-  align-items: center;
   gap: 10px;
+  align-items: center;
 }
 
 .mobile-menu {
@@ -683,7 +693,7 @@ main {
 @media screen and (min-width: 1200px) {
   .about__list {
     flex-wrap: nowrap;
-    padding-bottom: 118px;
+    padding-bottom: 94px;
   }
 }
 .about__item {
@@ -781,11 +791,12 @@ main {
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 @media screen and (min-width: 1200px) {
   .team__title {
     font-size: 36px;
+    margin-bottom: 50px;
   }
 }
 .team__container {
@@ -867,6 +878,7 @@ main {
 @media screen and (min-width: 1200px) {
   .clients-title {
     margin-bottom: 50px;
+    font-size: 36px;
   }
 }
 
@@ -1032,12 +1044,6 @@ main {
   background-color: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
-}
-@media screen and (min-width: 1200px) {
-  .footer {
-    padding-top: 94px;
-    padding-bottom: 94px;
-  }
 }
 .footer a:hover,
 .footer a:focus {
